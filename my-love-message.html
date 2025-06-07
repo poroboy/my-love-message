@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #000; /* พื้นหลังสีดำ */
+            overflow: hidden; /* ซ่อน scrollbar */
+        }
+
+        .blinking-text {
+            font-family: 'Arial Black', sans-serif; /* เลือก font ที่ดูโดดเด่น */
+            font-size: 10vw; /* ขนาดตัวอักษรปรับตามขนาดหน้าจอ */
+            color: #FF00FF; /* สีชมพูอมม่วง */
+            /* ปรับลดค่า text-shadow ลง */
+            text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF; /* ลดการกระจายของเงา */
+            animation: blink 1s infinite alternate; /* แอนิเมชั่นกระพริบ */
+            white-space: nowrap; /* ป้องกันไม่ให้ข้อความขึ้นบรรทัดใหม่ */
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            49% { opacity: 0.2; } /* ลด opacity ตอนจางลงเล็กน้อย ไม่ให้หายไปหมด */
+            50% { opacity: 0.1; } /* จุดที่จางที่สุด */
+            51% { opacity: 0.2; } /* เริ่มกลับมา */
+            100% { opacity: 1; }
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .blinking-text {
+                font-size: 15vw; /* ใหญ่ขึ้นหน่อยสำหรับมือถือ */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blinking-text">I Love You!</div>
+</body>
+</html>
